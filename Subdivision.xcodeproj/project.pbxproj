@@ -30,12 +30,12 @@
 		C96072371BE9D7E6002E99D4 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C96072391BE9D7EC002E99D4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C9D072281BF023F400F35DF0 /* fileio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fileio.h; sourceTree = "<group>"; };
-		C9D072291BF050C800F35DF0 /* cube3.obj.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = cube3.obj.txt; sourceTree = "<group>"; };
-		C9D0722A1BF050C800F35DF0 /* knot.obj.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = knot.obj.txt; sourceTree = "<group>"; };
-		C9D0722B1BF050C800F35DF0 /* monsterfrog.obj.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = monsterfrog.obj.txt; sourceTree = "<group>"; };
-		C9D0722D1BF0513800F35DF0 /* vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vertex.h; sourceTree = "<group>"; };
-		C9D0722F1BF0514E00F35DF0 /* face.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = face.h; sourceTree = "<group>"; };
-		C9D072301BF08D0B00F35DF0 /* linear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linear.h; sourceTree = "<group>"; };
+		C9D072321BF0B97F00F35DF0 /* manifold.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = manifold.h; sourceTree = "<group>"; };
+		C9D072351BF0BDDD00F35DF0 /* bunny.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = bunny.obj; sourceTree = "<group>"; };
+		C9D072361BF0BDDD00F35DF0 /* cube3.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = cube3.obj; sourceTree = "<group>"; };
+		C9D072371BF0BDDD00F35DF0 /* knot.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = knot.obj; sourceTree = "<group>"; };
+		C9D072381BF0BDDD00F35DF0 /* monsterfrog.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = monsterfrog.obj; sourceTree = "<group>"; };
+		C9D072391BF0C69800F35DF0 /* halfedge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = halfedge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +73,9 @@
 		C960722F1BE9D7BD002E99D4 /* Subdivision */ = {
 			isa = PBXGroup;
 			children = (
-				C9D0722D1BF0513800F35DF0 /* vertex.h */,
-				C9D0722F1BF0514E00F35DF0 /* face.h */,
+				C9D072391BF0C69800F35DF0 /* halfedge.h */,
+				C9D072321BF0B97F00F35DF0 /* manifold.h */,
 				C9D072281BF023F400F35DF0 /* fileio.h */,
-				C9D072301BF08D0B00F35DF0 /* linear.h */,
 				C96072301BE9D7BD002E99D4 /* main.cpp */,
 			);
 			path = Subdivision;
@@ -85,9 +84,10 @@
 		C9D0722C1BF050D900F35DF0 /* Obj files */ = {
 			isa = PBXGroup;
 			children = (
-				C9D072291BF050C800F35DF0 /* cube3.obj.txt */,
-				C9D0722A1BF050C800F35DF0 /* knot.obj.txt */,
-				C9D0722B1BF050C800F35DF0 /* monsterfrog.obj.txt */,
+				C9D072351BF0BDDD00F35DF0 /* bunny.obj */,
+				C9D072361BF0BDDD00F35DF0 /* cube3.obj */,
+				C9D072371BF0BDDD00F35DF0 /* knot.obj */,
+				C9D072381BF0BDDD00F35DF0 /* monsterfrog.obj */,
 			);
 			name = "Obj files";
 			sourceTree = "<group>";
