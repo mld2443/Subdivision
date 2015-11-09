@@ -4,13 +4,16 @@
 //
 //  Created by Matthew Dillard on 11/4/15.
 //
-//
 
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 #include <GLUT/GLUT.h>
 #include <OpenGL/gl.h>
 #include <stdlib.h>
+
+#include "face.h"
+#include "fileio.h"
+#include "linear.h"
 
 int WINDOW_WIDTH = 500, WINDOW_HEIGHT = 500;
 int window = 0;
@@ -21,7 +24,7 @@ bool leftPressed = false, rightPressed = false, middlePressed = false;
 
 // view state
 float rotMat[] = {1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1};
-float focus[] = {0,0,-1.5};
+float focus[] = {0,0,0};
 
 void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -37,11 +40,14 @@ void display() {
     glTranslatef(focus[0], focus[1], focus[2]);
     glMultMatrixf(rotMat);
     
-    
     // drawing code goes here
-    glutSolidCube(1);
-    // end drawing code
+    for (auto &v : vertices)
+        v.draw();
     
+    for (auto &f : faces)
+        f.draw();
+    
+    // end drawing code
     
     glFlush();
     glutSwapBuffers();
@@ -96,7 +102,7 @@ void motion(int x, int y) {
     }
     else if (rightPressed)
     {
-        focus [ 2 ] += 0.01 * dy;
+        focus[2] += 0.01 * dy;
     }
     
     // Store previous mouse positions
@@ -105,7 +111,6 @@ void motion(int x, int y) {
     
     glutPostRedisplay();
 }
-
 
 void keyboard(unsigned char key, int x, int y) {
     switch(key)
@@ -146,6 +151,22 @@ void init() {
     glEnable(GL_LIGHTING);
     
     glEnable(GL_CULL_FACE);
+    
+    //load("cube3.obj.txt");
+    //load("knot.obj.txt");
+    load("monsterfrog.obj.txt");
+    
+    float dx = xhigh-xlow, dy = yhigh - ylow, dz = zhigh - zlow;
+
+    if (dx >= dy && dx >= dz) {
+        focus[2] -= (3*dx)/5;
+    }
+    else if (dy >= dz) {
+        focus[2] -= (3*dy)/5;
+    }
+    else {
+        focus[2] -= (3*dz)/5;
+    }
 }
 
 
