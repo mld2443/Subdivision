@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C96072311BE9D7BD002E99D4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C96072301BE9D7BD002E99D4 /* main.cpp */; };
+		C96072381BE9D7E6002E99D4 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96072371BE9D7E6002E99D4 /* GLUT.framework */; };
+		C960723A1BE9D7EC002E99D4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96072391BE9D7EC002E99D4 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		C960722D1BE9D7BD002E99D4 /* Subdivision */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Subdivision; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96072301BE9D7BD002E99D4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C96072371BE9D7E6002E99D4 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		C96072391BE9D7EC002E99D4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C960723A1BE9D7EC002E99D4 /* OpenGL.framework in Frameworks */,
+				C96072381BE9D7E6002E99D4 /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +47,8 @@
 		C96072241BE9D7BD002E99D4 = {
 			isa = PBXGroup;
 			children = (
+				C96072391BE9D7EC002E99D4 /* OpenGL.framework */,
+				C96072371BE9D7E6002E99D4 /* GLUT.framework */,
 				C960722F1BE9D7BD002E99D4 /* Subdivision */,
 				C960722E1BE9D7BD002E99D4 /* Products */,
 			);
