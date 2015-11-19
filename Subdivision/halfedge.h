@@ -10,9 +10,9 @@
 
 #include <math.h>
 
-struct face;
 struct vertex;
 struct edge;
+struct face;
 
 struct halfedge {
     halfedge *next, *prev, *flip;
@@ -52,7 +52,7 @@ struct edge {
     vertex *v1, *v2;
     halfedge *he;
     
-    vertex midpointx2() { return (*v1 + *v2); }
+    vertex midpointx2() { return *v1 + *v2; }
     
     void draw() {
         GLfloat white[] = {1.0,1.0,1.0};

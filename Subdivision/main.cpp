@@ -17,6 +17,7 @@
 int WINDOW_WIDTH = 500, WINDOW_HEIGHT = 500;
 int window = 0;
 bool drawcontrol = false;
+float pointsize;
 
 // mouse state
 int prevX = 0, prevY = 0;
@@ -40,7 +41,7 @@ void display() {
     glTranslatef(focus[0], focus[1], focus[2]);
     glMultMatrixf(rotMat);
     
-    m.draw(drawcontrol);
+    m.draw(drawcontrol, pointsize);
     
     glFlush();
     glutSwapBuffers();
@@ -135,26 +136,13 @@ void keyboard(unsigned char key, int x, int y) {
         case '7':
         case '8':
         case '9':
-            //shape.subdiv_to(key - '0');
-            glutPostRedisplay();
-            break;
-            
-        case 'l':
-        case 'L':
-            //shape.linearSubOnce();
-            glutPostRedisplay();
-            break;
-            
-        case 'a':
-        case 'A':
-            //shape.averageOnce();
+            m.subdiv_to(key - '0');
             glutPostRedisplay();
             break;
             
         case '=':
         case '+':
-            //shape.linearSubOnce();
-            //shape.averageOnce();
+            m.subdivide();
             glutPostRedisplay();
             break;
             
@@ -195,7 +183,7 @@ void specialkey(int key, int x, int y) {
     }
 }
 
-void init() {
+void init(const char *filename, const float size) {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -207,10 +195,8 @@ void init() {
     
     glEnable(GL_CULL_FACE);
     
-    load("cube3.obj");
-    //load("knot.obj");
-    //load("monsterfrog.obj");
-    //load("bunny.obj");
+    load(filename);
+    pointsize = size;
     
     float dx = xhigh-xlow, dy = yhigh - ylow, dz = zhigh - zlow;
 
@@ -231,9 +217,9 @@ int main(int argc, char **argv) {
     glutInitWindowPosition(0, 0);
     glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
     window = glutCreateWindow("CSCE 645 - Matthew Dillard");
-    //glutFullScreen();
+    glutFullScreen();
     
-    init();
+    init(argv[1], atof(argv[2]));
     
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);

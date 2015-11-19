@@ -20,21 +20,21 @@ float xlow, ylow, zlow, xhigh, yhigh, zhigh;
 
 manifold m;
 
-void load(const std::string filename) {
+void load(const char *filename) {
     std::vector<vertex*> v_pointers;
     xlow = ylow = zlow = FLT_MAX;
     xhigh = yhigh = zhigh = -FLT_MAX;
     
     std::ifstream file(filename);
-    char token;
+    std::string token;
     
     while (!file.eof()) {
         file >> token;
-        if(token == '#'){
+        if(token[0] == '#'){
             std::string dummy;
             getline(file, dummy);
         }
-        else if (token == 'v') {
+        else if (token[0] == 'v' && token[1] != 'n') {
             double x, y, z;
             file >> x >> y >> z;
             
@@ -56,13 +56,18 @@ void load(const std::string filename) {
             //vertices.push_back({x,y,z,nullptr});
             v_pointers.push_back(m.add_vert(x, y, z));
         }
-        else if (token == 'f') {
+        else if (token[0] == 'f') {
             std::vector<unsigned int> face_verts;
             file >> std::ws;
             while (std::isdigit(file.peek())) {
-                unsigned int v;
-                file >> v >> std::ws;
-                face_verts.push_back(v-1);
+                std::string vnum;
+                file >> vnum >> std::ws;
+                
+                std::size_t found = vnum.find("//");
+                if (found!=std::string::npos)
+                    vnum = vnum.substr(0,found);
+                
+                face_verts.push_back(std::stoi(vnum)-1);
             }
             
             m.add_face(v_pointers, face_verts);
