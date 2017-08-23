@@ -31,13 +31,7 @@
 		C96072391BE9D7EC002E99D4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C9D072281BF023F400F35DF0 /* fileio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fileio.h; sourceTree = "<group>"; };
 		C9D072321BF0B97F00F35DF0 /* manifold.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = manifold.h; sourceTree = "<group>"; };
-		C9D072351BF0BDDD00F35DF0 /* bunny.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = bunny.obj; sourceTree = "<group>"; };
-		C9D072361BF0BDDD00F35DF0 /* cube3.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = cube3.obj; sourceTree = "<group>"; };
-		C9D072371BF0BDDD00F35DF0 /* knot.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = knot.obj; sourceTree = "<group>"; };
-		C9D072381BF0BDDD00F35DF0 /* monsterfrog.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = monsterfrog.obj; sourceTree = "<group>"; };
 		C9D072391BF0C69800F35DF0 /* halfedge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = halfedge.h; sourceTree = "<group>"; };
-		C9D0723A1BF3D39400F35DF0 /* tetra.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = tetra.obj; sourceTree = "<group>"; };
-		C9D0723C1BF3E93D00F35DF0 /* armadillo.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = armadillo.obj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +54,6 @@
 				C96072371BE9D7E6002E99D4 /* GLUT.framework */,
 				C960722F1BE9D7BD002E99D4 /* Subdivision */,
 				C960722E1BE9D7BD002E99D4 /* Products */,
-				C9D0722C1BF050D900F35DF0 /* Obj files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,19 +74,6 @@
 				C96072301BE9D7BD002E99D4 /* main.cpp */,
 			);
 			path = Subdivision;
-			sourceTree = "<group>";
-		};
-		C9D0722C1BF050D900F35DF0 /* Obj files */ = {
-			isa = PBXGroup;
-			children = (
-				C9D072351BF0BDDD00F35DF0 /* bunny.obj */,
-				C9D072361BF0BDDD00F35DF0 /* cube3.obj */,
-				C9D072371BF0BDDD00F35DF0 /* knot.obj */,
-				C9D072381BF0BDDD00F35DF0 /* monsterfrog.obj */,
-				C9D0723A1BF3D39400F35DF0 /* tetra.obj */,
-				C9D0723C1BF3E93D00F35DF0 /* armadillo.obj */,
-			);
-			name = "Obj files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

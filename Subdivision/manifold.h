@@ -177,10 +177,10 @@ public:
     }
     
     void subdivide() {
-        std::list<vertex> *newV = new std::list<vertex>();
-        std::list<face> *newF = new std::list<face>();
-        std::list<edge> *newE = new std::list<edge>();
-        std::list<halfedge> *newH = new std::list<halfedge>();
+        auto newV = new std::list<vertex>();
+        auto newF = new std::list<face>();
+        auto newE = new std::list<edge>();
+        auto newH = new std::list<halfedge>();
         
         for (auto &v : *vertices) {
             auto ref = flower(*newV, v);
